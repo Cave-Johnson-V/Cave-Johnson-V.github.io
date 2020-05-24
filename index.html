@@ -12,8 +12,11 @@
     <br><br>
     <span id='message'></span>
     <br><br>
+    <span id='converter'></span>
+    <br><br>
     <script>
         var message = document.querySelector('#message');
+        var converter = document.querySelector('#converter');
 
         var SpeechRecognition = webkitSpeechRecognition;
         var SpeechGrammarList = webkitSpeechGrammarList;
@@ -31,6 +34,58 @@
             var last = event.results.length - 1;
             var command = event.results[last][0].transcript;
             message.textContent = 'You are saying: ' + command + '.';
+
+            if(command.toLowerCase() === 'lachrymation'){
+                converter.textContent = 'Did you mean: Crying.';
+            }
+            else if (command.toLowerCase() === 'photalgia'){
+                converter.textContent = 'Did you mean: Pain in eyes when exposed to bright light.';
+            }
+            else if (command.toLowerCase() === 'epistaxis'){
+                converter.textContent = 'Did you mean: Bleeding from nose.';
+            }
+            else if (command.toLowerCase() === 'morsicatio buccarum'){
+                converter.textContent = 'Did you mean: Biting down one’s inner cheeks.';
+            }
+            else if (command.toLowerCase() === 'xerosis'){
+                converter.textContent = 'Did you mean: Dryness of skin.'; 
+            } 
+            else if (command.toLowerCase() === 'proctalgia fugax'){
+                converter.textContent = 'Did you mean: Pain in and around the rectum and anus.'; 
+            } 
+            else if (command.toLowerCase() === 'procidentia'){
+                converter.textContent = 'Did you mean: Descent of any internal organ (prolapse).'; 
+            } 
+            else if (command.toLowerCase() === 'bruxism'){
+                converter.textContent = 'Did you mean: Teeth grinding.'; 
+            } 
+            else if (command.toLowerCase() === 'rhinorrhea'){
+                converter.textContent = 'Did you mean: Runny nose.'; 
+            } 
+            else if (command.toLowerCase() === 'horripilation'){
+                converter.textContent = 'Did you mean: Goosebumps.'; 
+            } 
+            else if (command.toLowerCase() === 'pyrexia'){
+                converter.textContent = 'Did you mean: Fever.'; 
+            } 
+            else if (command.toLowerCase() === 'hyperhidrosis'){
+                converter.textContent = 'Did you mean: Excessive sweating.'; 
+            } 
+            else if (command.toLowerCase() === 'Dysphagia'){
+                converter.textContent = 'Did you mean: Difficulty in swallowing.'; 
+            } 
+            else if (command.toLowerCase() === 'dyspnea'){
+                converter.textContent = 'Did you mean: Difficulty in breathing.'; 
+            } 
+            else if (command.toLowerCase() === 'pneumoultramicroscopicsilicovolcanoconiosis'){
+                converter.textContent = 'Did you mean: A lung disease caused by inhaling silica dust.'; 
+            } 
+            else if (command.toLowerCase() === 'laugh out loud'){
+                converter.textContent = 'Did you mean: LOL.'; 
+            }
+            else if (command.toLowerCase() === 'as soon as possible'){
+                converter.textContent = 'Did you mean: ASAP.'; 
+            }
         };
 
         recognition.onspeechend = function() {
